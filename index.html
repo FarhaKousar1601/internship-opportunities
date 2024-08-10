@@ -5,66 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Internship Opportunities</title>
     <style>
-        /* Background animation */
-        @keyframes bgAnimation {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-        }
-        body {
-            font-family: Arial, sans-serif;
+        /* Basic Reset */
+        * {
             margin: 0;
             padding: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(270deg, #ff7e5f, #feb47b, #ff7e5f, #feb47b);
-            background-size: 600% 600%;
-            animation: bgAnimation 16s ease infinite;
+            box-sizing: border-box;
         }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            overflow-y: auto;
+            margin: 0;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Background video */
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(50%);
+        }
+
+        /* Container styles */
         .container {
             max-width: 800px;
-            background: rgba(255, 255, 255, 0.85);
+            margin: 40px auto;
             padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
+
+        /* Typing animation */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
         h1 {
-            color: #333;
-            text-align: center;
+            font-size: 2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            width: 100%;
+            margin: 0 auto 20px auto;
+            animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
         }
+
+        /* Opportunity sections */
         .opportunity {
             margin: 20px 0;
         }
+
         .opportunity h2 {
             color: #ff7e5f;
+            margin-bottom: 10px;
         }
+
         .opportunity p {
             margin: 5px 0;
-            color: #555;
+            color: #ddd;
         }
+
         a {
             color: #ff7e5f;
             text-decoration: none;
             font-weight: bold;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
+        /* Social links */
         .social {
             margin: 20px 0;
             text-align: center;
         }
+
         .social a {
             margin: 0 10px;
             text-decoration: none;
             font-weight: bold;
-            color: #333;
+            color: #ff7e5f;
         }
     </style>
 </head>
 <body>
+    <!-- Background video -->
+    <video autoplay muted loop id="background-video">
+        <source src="https://www.videvo.net/videvo_files/converted/2017_01/preview/170112A_01_Coding_Screen.mp487618.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
     <div class="container">
         <h1>🚀 Internship Opportunities 👩‍💻</h1>
 
